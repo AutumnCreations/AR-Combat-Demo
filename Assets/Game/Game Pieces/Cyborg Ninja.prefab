@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &8750620810041672160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7319116121922192490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0356dc5a740a1f1499c163e1d58da2a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5414196787473500268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -123,10 +135,16 @@ PrefabInstance:
     - target: {fileID: 3364661846380118817, guid: d9c2584e1c4124e4ebdf4a4f52ad70ef,
         type: 3}
       propertyPath: m_Name
-      value: Base Character
+      value: Cyborg Ninja
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9c2584e1c4124e4ebdf4a4f52ad70ef, type: 3}
+--- !u!1 &7319116121922192490 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3364661846380118817, guid: d9c2584e1c4124e4ebdf4a4f52ad70ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 5414196787849054027}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7319116121922193301 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3364661846380118238, guid: d9c2584e1c4124e4ebdf4a4f52ad70ef,

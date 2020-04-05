@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
-public class NewBehaviourScript : MonoBehaviour
+public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] GameObject placementIndicator = null;
     [SerializeField] GameObject objectToPlace = null;

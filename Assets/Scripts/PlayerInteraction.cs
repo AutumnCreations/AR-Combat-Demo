@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
+using UnityEngine.EventSystems;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -11,11 +12,14 @@ public class PlayerInteraction : MonoBehaviour
 
     ARSessionOrigin origin;
     Pose placementPose;
+    EventSystem eventSystem;
+    
 
     bool isPlacementValid;
 
     void Start()
     {
+        eventSystem = FindObjectOfType<EventSystem>();
         origin = FindObjectOfType<ARSessionOrigin>();
     }
 
@@ -25,6 +29,10 @@ public class PlayerInteraction : MonoBehaviour
         UpdatePlacementIndicator();
         if (isPlacementValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
+            if (eventSystem.IsPointerOverGameObject())
+            {
+                return;
+            }
             PlaceObject();
         }
     }

@@ -15,7 +15,7 @@ public class UIToggle : MonoBehaviour
         playerInteraction = FindObjectOfType<PlayerInteraction>();
         textMeshPro = GetComponentInChildren<TextMeshProUGUI>();
 
-        textMeshPro.text = "Place " + objectToPlace.name;
+        textMeshPro.text = objectToPlace.name;
     }
 
     public void SetObjectToPlace()

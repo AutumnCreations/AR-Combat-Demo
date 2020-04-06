@@ -137,7 +137,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyborg Ninja
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4520746427154602546, guid: d9c2584e1c4124e4ebdf4a4f52ad70ef, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d9c2584e1c4124e4ebdf4a4f52ad70ef, type: 3}
 --- !u!1 &7319116121922192490 stripped
 GameObject:

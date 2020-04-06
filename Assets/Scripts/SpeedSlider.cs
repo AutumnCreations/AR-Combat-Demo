@@ -18,7 +18,8 @@ public class SpeedSlider : MonoBehaviour
         combatants = FindObjectsOfType<Combatant>();
     }
 
-    public void AdjustSpeed(float speedToSet)
+    public 
+        void AdjustSpeed(float speedToSet)
     {
         foreach (Combatant combatant in combatants)
         {

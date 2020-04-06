@@ -8,7 +8,6 @@ using UnityEngine.EventSystems;
 public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] GameObject placementIndicator = null;
-    [SerializeField] GameObject objectToPlace = null;
 
     ARSessionOrigin origin;
     Pose placementPose;
@@ -27,19 +26,23 @@ public class PlayerInteraction : MonoBehaviour
     {
         UpdatePlacementPose();
         UpdatePlacementIndicator();
-        if (isPlacementValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-        {
-            if (eventSystem.IsPointerOverGameObject())
-            {
-                return;
-            }
-            PlaceObject();
-        }
+
+        //if (isPlacementValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        //{
+        //    if (eventSystem.IsPointerOverGameObject())
+        //    {
+        //    return;
+        //    }
+        //    PlaceObject();
+        //}
     }
 
-    private void PlaceObject()
+    public void PlaceObject(GameObject objectToPlace)
     {
+        if (isPlacementValid)
+        {
         Instantiate(objectToPlace, placementPose.position, placementPose.rotation);
+        }
     }
 
     private void UpdatePlacementIndicator()

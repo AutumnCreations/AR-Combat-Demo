@@ -492,7 +492,7 @@ PrefabInstance:
         type: 3}
       propertyPath: objectToPlace
       value: 
-      objectReference: {fileID: 6749827166590331361, guid: 59a21d19bcf4c024ab0998a55cfbe379,
+      objectReference: {fileID: 3357952371317214051, guid: a085167376f746e4097a3b78417bb242,
         type: 3}
     - target: {fileID: 8758204302680245714, guid: 210766da4138c6d46927ff67fab18aa8,
         type: 3}
@@ -1000,7 +1000,7 @@ PrefabInstance:
         type: 3}
       propertyPath: objectToPlace
       value: 
-      objectReference: {fileID: 7319116121922192490, guid: 21d38c46d628d314b868e663869a757b,
+      objectReference: {fileID: 6749827166590331361, guid: 59a21d19bcf4c024ab0998a55cfbe379,
         type: 3}
     - target: {fileID: 8758204302680245714, guid: 210766da4138c6d46927ff67fab18aa8,
         type: 3}
@@ -1176,7 +1176,7 @@ PrefabInstance:
         type: 3}
       propertyPath: objectToPlace
       value: 
-      objectReference: {fileID: 6749827166590331361, guid: 59a21d19bcf4c024ab0998a55cfbe379,
+      objectReference: {fileID: 856767857650477427, guid: 92ce0d9d82a09794f9c5d7cb986e944d,
         type: 3}
     - target: {fileID: 8758204302680245714, guid: 210766da4138c6d46927ff67fab18aa8,
         type: 3}

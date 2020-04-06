@@ -13,7 +13,7 @@ public class UIToggle : MonoBehaviour
     void Start()
     {
         playerInteraction = FindObjectOfType<PlayerInteraction>();
-        textMeshPro = GetComponent<TextMeshProUGUI>();
+        textMeshPro = GetComponentInChildren<TextMeshProUGUI>();
 
         textMeshPro.text = "Place " + objectToPlace.name;
     }

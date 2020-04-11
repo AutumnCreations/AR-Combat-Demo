@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Combatant : MonoBehaviour
 {
+    [SerializeField] float health = 100f;
+    [SerializeField] float aggroDistance = 2f;
+
     float speed = 0f;
-    float health = 100f;
     bool isDead = false;
 
-    Animator animator;
-    Combatant target; 
+    Combatant[] combatants;
 
+    Animator animator;
+    Combatant target;
 
     void Start()
     {
@@ -27,11 +30,20 @@ public class Combatant : MonoBehaviour
 
     public void Fight()
     {
+        combatants = FindObjectsOfType<Combatant>();
 
-        target = FindObjectOfType<Combatant>();
-        if (target.isDead)
+        foreach (Combatant combatant in combatants)
         {
-
+            if (combatant.isDead)
+            { continue; }
+            if (Vector3.Distance(transform.position, combatant.transform.position) < aggroDistance)
+            {
+                target = combatant;
+            }
+        }
+        if (target != null)
+        {
+            print(target.name);
         }
     }
 

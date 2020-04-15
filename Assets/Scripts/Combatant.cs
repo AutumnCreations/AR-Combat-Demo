@@ -11,7 +11,7 @@ public class Combatant : MonoBehaviour
     [SerializeField] float stoppingDistance = 1f;
 
     float speed = 0f;
-    bool isDead = false;
+    public bool isDead = false;
 
     Combatant[] combatants;
 
@@ -23,6 +23,7 @@ public class Combatant : MonoBehaviour
     private enum State
     {
         Idle,
+        Normal,
         Moving,
         Attacking,
         Dead,
@@ -40,6 +41,9 @@ public class Combatant : MonoBehaviour
         switch (state)
         {
             case State.Idle:
+                break;
+            case State.Normal:
+                SearchForTargets();
                 break;
             case State.Moving:
                 MoveTowardsTarget();
@@ -60,7 +64,15 @@ public class Combatant : MonoBehaviour
     private void AttackTarget()
     {
         SetSpeed(0);
-        print(gameObject.name + " is attacking " + target.name);
+        if (!target.isDead)
+        {
+            print(gameObject.name + " is attacking " + target.name);
+        }
+        else
+        {
+            target = null;
+            state = State.Normal;
+        }
     }
 
     public void MoveTowardsTarget()
@@ -78,7 +90,7 @@ public class Combatant : MonoBehaviour
 
     }
 
-    public void Fight()
+    public void SearchForTargets()
     {
         combatants = FindObjectsOfType<Combatant>();
 
@@ -106,7 +118,7 @@ public class Combatant : MonoBehaviour
         animator.SetFloat("forwardSpeed", speed);
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Color gizmoColor = Color.cyan;
         Gizmos.color = gizmoColor;

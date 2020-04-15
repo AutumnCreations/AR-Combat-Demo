@@ -11,7 +11,7 @@ public class BattleButton : MonoBehaviour
         combatants = FindObjectsOfType<Combatant>();
         foreach (Combatant combatant in combatants)
         {
-            combatant.Fight();
+            combatant.SearchForTargets();
         }
     }
 }

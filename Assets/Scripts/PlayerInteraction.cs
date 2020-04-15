@@ -12,7 +12,7 @@ public class PlayerInteraction : MonoBehaviour
     ARSessionOrigin origin;
     Pose placementPose;
     EventSystem eventSystem;
-    
+
 
     bool isPlacementValid;
 
@@ -39,9 +39,9 @@ public class PlayerInteraction : MonoBehaviour
 
     public void PlaceObject(GameObject objectToPlace)
     {
-        if (isPlacementValid)
+        if (isPlacementValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
-        Instantiate(objectToPlace, placementPose.position, placementPose.rotation);
+            Instantiate(objectToPlace, placementPose.position, placementPose.rotation);
         }
     }
 

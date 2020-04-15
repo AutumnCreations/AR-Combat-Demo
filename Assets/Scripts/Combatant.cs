@@ -9,9 +9,11 @@ public class Combatant : MonoBehaviour
     [SerializeField] float health = 100f;
     [SerializeField] float aggroDistance = 5f;
     [SerializeField] float stoppingDistance = 1f;
+    [SerializeField] float timeBetweenAttacks = 1.5f;
 
     float speed = 0f;
     public bool isDead = false;
+    private float timeSinceLastAttack = 0f;
 
     Combatant[] combatants;
 
@@ -59,19 +61,26 @@ public class Combatant : MonoBehaviour
             isDead = true;
             state = State.Dead;
         }
+        timeSinceLastAttack += Time.deltaTime;
     }
 
     private void AttackTarget()
     {
         SetSpeed(0);
-        if (!target.isDead)
-        {
-            print(gameObject.name + " is attacking " + target.name);
-        }
-        else
+        if (target.isDead)
         {
             target = null;
             state = State.Normal;
+            return;
+        }
+
+        if (timeSinceLastAttack > timeBetweenAttacks)
+        {
+            int randomAttack = UnityEngine.Random.Range(1, 4);
+            animator.SetTrigger(string.Format("attack {0}", randomAttack));
+
+            print(string.Format("{0} attacks {1} with attack {2}!", gameObject.name, target.name, randomAttack));
+            timeSinceLastAttack = 0;
         }
     }
 

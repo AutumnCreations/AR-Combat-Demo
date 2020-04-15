@@ -52,6 +52,8 @@ MonoBehaviour:
   health: 100
   aggroDistance: 7
   stoppingDistance: 1
+  timeBetweenAttacks: 1.5
+  isDead: 0
 --- !u!1001 &5621654696423547638
 PrefabInstance:
   m_ObjectHideFlags: 0

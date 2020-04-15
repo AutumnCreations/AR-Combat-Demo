@@ -6,7 +6,7 @@ public class BattleButton : MonoBehaviour
 {
     Combatant[] combatants;
 
-    void Fight()
+    public void Fight()
     {
         combatants = FindObjectsOfType<Combatant>();
         foreach (Combatant combatant in combatants)
